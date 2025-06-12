@@ -1,0 +1,119 @@
+/* ======= Global Styles ======= */
+:root {
+    --primary-blue: #003366;
+    --secondary-grey: #555555;
+    --light-grey: #f8f9fa;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 80px; /* For fixed navbar */
+}
+
+.bg-dark-blue {
+    background-color: var(--primary-blue);
+}
+
+/* ======= Hero Banner ======= */
+.hero-banner {
+    padding: 100px 0;
+    background-color: var(--light-grey);
+}
+
+.hero-banner h1 {
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+/* ======= WhatsApp Float Button ======= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======= Responsive Adjustments ======= */
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 60px 0;
+        text-align: center;
+    }
+}
+
+/* ======= Services Page Specific Styles ======= */
+.service-icon {
+    color: var(--primary-blue);
+}
+
+.process-step {
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+    height: 100%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* ======= About Page Specific Styles ======= */
+.company-story p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.achievement-box {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.founder-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.founder-section ul li:before {
+    content: "✓";
+    color: var(--primary-blue);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+blockquote {
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 20px;
+    font-style: italic;
+}

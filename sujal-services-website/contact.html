@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sujal Services & Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ======= Header (Same as Homepage) ======= -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="Sujal Services Logo" height="40">
+                    <span class="ms-2">Sujal Services & Solutions</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary ms-lg-3">Get a Quote</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ======= Contact Banner ======= -->
+    <section class="page-banner bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4">Contact Us</h1>
+            <p class="lead">Get in touch for bearing inquiries, quotes, or technical support.</p>
+        </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section class="contact-section py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">Send Your Inquiry</h3>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name*</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email*</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject*</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="" selected disabled>Select an option</option>
+                                        <option value="quote">Request a Quote</option>
+                                        <option value="product">Product Inquiry</option>
+                                        <option value="technical">Technical Support</option>
+                                        <option value="custom">Custom Bearing Request</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message*</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info & Map -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">Our Office</h3>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-map-marker-alt text-primary me-2"></i> Address</h5>
+                                <p>40/42, Nagdevi Street, 2nd Floor, Masjid Bunder (West), Mumbai - 400003, Maharashtra, India</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-clock text-primary me-2"></i> Business Hours</h5>
+                                <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-phone-alt text-primary me-2"></i> Phone</h5>
+                                <p>+91 9322279696<br>+91 7039894296</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-envelope text-primary me-2"></i> Email</h5>
+                                <p>cp.sujal@gmail.com<br>sujalmohite35@gmail.com</p>
+                            </div>
+                            <div class="social-links">
+                                <a href="https://wa.me/919322279696" class="btn btn-success me-2 mb-2" target="_blank">
+                                    <i class="fab fa-whatsapp me-1"></i> WhatsApp
+                                </a>
+                                <a href="https://linkedin.com/company/sujal-services" class="btn btn-linkedin me-2 mb-2" target="_blank">
+                                    <i class="fab fa-linkedin me-1"></i> LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Maps Embed -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card shadow">
+                        <div class="card-body p-0">
+                    
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.523680264092!2d72.83083637502422!3d18.952466182226853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce236487cf8d%3A0xb139fedffd181de4!2s40%2C%20Nagdevi%20St%2C%20Near%20Mohammadi%20Masjid%2C%20Nakhuda%20Mohalla%2C%20Chippi%20Chawl%2C%20Kalbadevi%2C%20Mumbai%2C%20Maharashtra%20400003!5e0!3m2!1sen!2sin!4v1749719281053!5m2!1sen!2sin"
+                                    width="100%" 
+                                    height="400" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= WhatsApp Float Button ======= -->
+    <a href="https://wa.me/919322279696" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ======= Footer (Same as Homepage) ======= -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Sujal Services & Solutions</h5>
+                    <p>Your trusted partner for industrial bearings and machinery solutions.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-phone me-2"></i> +91 7039894296</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@sujalservices.com</p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2024 Sujal Services & Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS (Form Validation) -->
+    <script src="js/script.js"></script>
+</body>
+</html>
