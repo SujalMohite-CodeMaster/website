@@ -1,77 +1,75 @@
-// WhatsApp Button Click Event
-document.querySelector('.whatsapp-float').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', () => {
+  // WhatsApp floating alert
+  document.querySelector('.whatsapp-float')?.addEventListener('click', () => {
     alert("You'll be redirected to WhatsApp. Please send your inquiry!");
-});
+  });
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
     });
-});
+  });
 
-function sendToWhatsApp(event) {
-  event.preventDefault();
-  
-  // Get form values
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
-  const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value;
-  
-  // Format WhatsApp message
-  const whatsappMessage = `New Inquiry from Sujal Services Website:
-  
+  // WhatsApp Form Submission
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !phone || !subject || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    const whatsappMessage = `New Inquiry from Sujal Services Website:
+
 *Name:* ${name}
 *Email:* ${email}
 *Phone:* ${phone}
 *Subject:* ${subject}
-*Message:*
-${message}`;
+*Message:* ${message}`;
 
-  // Encode for URL
-  const encodedMessage = encodeURIComponent(whatsappMessage);
-  
-  // Your WhatsApp number (with country code)
-  const whatsappNumber = '919322279696'; // Replace if different
-  
-  // Create WhatsApp link
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-  
-  // Open in new tab
-  window.open(whatsappUrl, '_blank');
-  
-  // Optional: Reset form
-  event.target.reset();
-  
-  // Optional: Show confirmation
-  alert('You will be redirected to WhatsApp to send your inquiry.');
-}
+    const url = `https://wa.me/919322279696?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(url, '_blank');
+    form.reset();
+    alert('You will be redirected to WhatsApp.');
 
-// In script.js
-const loadingOverlay = document.getElementById('loadingOverlay');
-const MIN_DISPLAY_TIME = 2500; // 2.5 seconds
-
-window.addEventListener('load', function() {
-  const loadTime = Date.now() - performance.timing.navigationStart;
-  if (loadTime < MIN_DISPLAY_TIME) {
+    // Delay loader to let WhatsApp redirect happen
     setTimeout(() => {
-      loadingOverlay.classList.remove('active');
-    }, MIN_DISPLAY_TIME - loadTime);
-  } else {
-    loadingOverlay.classList.remove('active');
-  }
-});
+      loadingOverlay.classList.add('active');
+    }, 100);
+  });
 
-// Universal loader trigger
-document.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', (e) => {
-    if (link.href && !link.href.includes('#')) {
-      document.getElementById('loadingOverlay').classList.add('active');
-    }
+  // Loader on page load
+  const loadingOverlay = document.getElementById('loadingOverlay');
+  const MIN_DISPLAY_TIME = 2500;
+  window.addEventListener('load', () => {
+    const elapsed = Date.now() - performance.timing.navigationStart;
+    const delay = MIN_DISPLAY_TIME - elapsed;
+    setTimeout(() => loadingOverlay.classList.remove('active'), delay > 0 ? delay : 0);
+  });
+
+  // Universal loader trigger (excluding form & WhatsApp links)
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href');
+      if (
+        !href ||
+        href.startsWith('#') ||
+        href.startsWith('https://wa.me') ||
+        link.closest('form') ||
+        link.classList.contains('no-loader')
+      ) return;
+      loadingOverlay.classList.add('active');
+    });
   });
 });
