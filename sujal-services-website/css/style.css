@@ -255,3 +255,69 @@ blockquote {
     height: 30px;
   }
 }
+
+@media (max-width: 768px) {
+  .founder-section .row {
+    flex-direction: column-reverse; /* Image below text on mobile */
+  }
+  .founder-section img {
+    max-width: 200px;
+    margin: 0 auto 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .achievement-box {
+    margin-bottom: 15px;
+  }
+  .achievement-box h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+    padding-left: 0;
+  }
+  .timeline-date {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    margin: 0 10px;
+    padding: 15px;
+  }
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== About Page Mobile Tweaks ===== */
+@media (max-width: 768px) {
+  /* Company Story Section */
+  .company-story .row {
+    flex-direction: column;
+  }
+  .company-story img {
+    margin-top: 20px;
+  }
+
+  /* Founder Quote */
+  blockquote {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  /* Why Choose Us Cards */
+  .icon-box {
+    width: 60px;
+    height: 60px;
+  }
+  .icon-box i {
+    font-size: 1.5rem;
+  }
+}
