@@ -152,6 +152,51 @@
         </div>
     </section>
 
+    <!-- ===== START: Improved Loading Animation ===== -->
+   
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="bearing-loader">
+          <div class="outer-ring">
+             <div class="ball"></div>
+             <div class="ball"></div>
+             <div class="ball"></div>
+             <div class="ball"></div>
+          </div>
+          <div class="inner-ring">
+             <!-- Added logo -->
+             <img src="images/SSS logo.webp" alt="Sujal Services" class="bearing-logo">
+          </div>
+     </div>
+      <p class="loading-text">Loading...</p>
+   </div>
+    
+    <script>
+    // Enhanced loader control
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const MIN_DISPLAY_TIME = 2500; // 2.5 seconds minimum
+    
+    // Show loader on link clicks
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (this.href && !this.href.includes('#') && !this.classList.contains('no-loader')) {
+          e.preventDefault();
+          loadingOverlay.style.opacity = 1;
+          setTimeout(() => {
+            window.location.href = this.href;
+          }, MIN_DISPLAY_TIME);
+        }
+      });
+    });
+    
+    // Hide when page loads
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        loadingOverlay.style.opacity = 0;
+      }, 500);
+    });
+    </script>
+    <!-- ===== END: Improved Loading Animation ===== -->
+
     <!-- ======= CTA Section ======= -->
     <section class="cta-section bg-dark-blue text-white py-5">
         <div class="container text-center">

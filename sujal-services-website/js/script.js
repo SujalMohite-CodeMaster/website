@@ -51,3 +51,27 @@ ${message}`;
   // Optional: Show confirmation
   alert('You will be redirected to WhatsApp to send your inquiry.');
 }
+
+// In script.js
+const loadingOverlay = document.getElementById('loadingOverlay');
+const MIN_DISPLAY_TIME = 2500; // 2.5 seconds
+
+window.addEventListener('load', function() {
+  const loadTime = Date.now() - performance.timing.navigationStart;
+  if (loadTime < MIN_DISPLAY_TIME) {
+    setTimeout(() => {
+      loadingOverlay.classList.remove('active');
+    }, MIN_DISPLAY_TIME - loadTime);
+  } else {
+    loadingOverlay.classList.remove('active');
+  }
+});
+
+// Universal loader trigger
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    if (link.href && !link.href.includes('#')) {
+      document.getElementById('loadingOverlay').classList.add('active');
+    }
+  });
+});
