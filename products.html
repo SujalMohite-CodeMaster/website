@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <meta name="description" content="Browse our bearing catalog - SKF, FAG, NTN ball bearings, roller bearings, and thrust bearings with technical specifications">
+
 </head>
 <body>
     <!-- ======= Header (Same as Homepage) ======= -->
@@ -153,6 +156,88 @@
             </div>
         </div>
     </section>
+
+     <!-- Add this inside your products.html -->
+<section class="product-categories py-5">
+  <div class="container">
+    <!-- Category Filter Buttons -->
+    <div class="text-center mb-5">
+      <button class="btn btn-outline-primary mx-2 category-filter active" data-category="all">All Products</button>
+      <button class="btn btn-outline-primary mx-2 category-filter" data-category="ball">Ball Bearings</button>
+      <button class="btn btn-outline-primary mx-2 category-filter" data-category="roller">Roller Bearings</button>
+      <button class="btn btn-outline-primary mx-2 category-filter" data-category="thrust">Thrust Bearings</button>
+    </div>
+
+    <!-- Ball Bearings Category -->
+    <div class="category-section" id="ball-bearings">
+      <h2 class="category-title mb-4">Ball Bearings</h2>
+      <div class="row">
+        <!-- Product 1 -->
+        <div class="col-lg-4 col-md-6 mb-4 product-card" data-category="ball">
+          <div class="card h-100">
+            <img src="images/skf6205.webp" class="card-img-top" alt="SKF 6205 Bearing" loading="lazy">
+            <div class="card-body">
+              <h3>SKF 6205-2RS1</h3>
+              <div class="product-specs">
+                <p><strong>Dimensions:</strong> 25mm × 52mm × 15mm</p>
+                <p><strong>Type:</strong> Deep Groove</p>
+                <p><strong>Material:</strong> Chrome Steel</p>
+                <p><strong>Load Capacity:</strong> 14kN Dynamic</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary inquire-btn" data-product="SKF 6205-2RS1">Inquire Now</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="col-lg-4 col-md-6 mb-4 product-card" data-category="ball">
+          <div class="card h-100">
+            <img src="images/products/fag-6008.webp" class="card-img-top" alt="FAG 6008 Bearing">
+            <div class="card-body">
+              <h3>FAG 6008-C</h3>
+              <div class="product-specs">
+                <p><strong>Dimensions:</strong> 40mm × 68mm × 15mm</p>
+                <p><strong>Type:</strong> Single Row</p>
+                <p><strong>Material:</strong> Stainless Steel</p>
+                <p><strong>Load Capacity:</strong> 12.5kN Dynamic</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary inquire-btn" data-product="FAG 6008-C">Inquire Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roller Bearings Category -->
+    <div class="category-section" id="roller-bearings">
+      <h2 class="category-title mb-4">Roller Bearings</h2>
+      <div class="row">
+        <!-- Product 1 -->
+        <div class="col-lg-4 col-md-6 mb-4 product-card" data-category="roller">
+          <div class="card h-100">
+            <img src="images/products/ntn-nu206.webp" class="card-img-top" alt="NTN NU206 Bearing">
+            <div class="card-body">
+              <h3>NTN NU206</h3>
+              <div class="product-specs">
+                <p><strong>Dimensions:</strong> 30mm × 62mm × 16mm</p>
+                <p><strong>Type:</strong> Cylindrical</p>
+                <p><strong>Material:</strong> Carbon Steel</p>
+                <p><strong>Load Capacity:</strong> 22kN Dynamic</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary inquire-btn" data-product="NTN NU206">Inquire Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- ===== START: Improved Loading Animation ===== -->
    

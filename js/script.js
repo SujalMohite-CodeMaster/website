@@ -73,3 +73,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Category Filter Functionality
+document.querySelectorAll('.category-filter').forEach(button => {
+  button.addEventListener('click', function() {
+    // Update active button
+    document.querySelectorAll('.category-filter').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    this.classList.add('active');
+    
+    const category = this.dataset.category;
+    
+    // Show/hide categories
+    if (category === 'all') {
+      document.querySelectorAll('.category-section').forEach(section => {
+        section.classList.add('active');
+      });
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.style.display = 'block';
+      });
+    } else {
+      document.querySelectorAll('.category-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.querySelector(`#${category}-bearings`).classList.add('active');
+      
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.style.display = 'none';
+      });
+      document.querySelectorAll(`.product-card[data-category="${category}"]`).forEach(card => {
+        card.style.display = 'block';
+      });
+    }
+  });
+});
+
+// Inquiry Button Functionality
+document.querySelectorAll('.inquire-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const productName = this.dataset.product;
+    const message = `I'm interested in ${productName}. Please share pricing and availability.`;
+    window.open(`https://wa.me/919322279696?text=${encodeURIComponent(message)}`, '_blank');
+  });
+});
