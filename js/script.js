@@ -117,3 +117,68 @@ document.querySelectorAll('.inquire-btn').forEach(button => {
     window.open(`https://wa.me/919322279696?text=${encodeURIComponent(message)}`, '_blank');
   });
 });
+
+// ===== DARK MODE FUNCTIONALITY =====
+function initDarkMode() {
+    // Create theme toggle button if it doesn't exist
+    if (!document.getElementById('themeToggle')) {
+        const themeToggleHtml = `
+            <div class="theme-toggle-container">
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-text">Dark Mode</span>
+                </button>
+            </div>
+        `;
+        
+        // Add to navbar - adjust selector based on your navbar structure
+        const navbar = document.querySelector('.navbar-nav') || document.querySelector('.navbar-collapse');
+        if (navbar) {
+            navbar.insertAdjacentHTML('beforeend', themeToggleHtml);
+        } else {
+            // Fallback: add to body
+            document.body.insertAdjacentHTML('afterbegin', themeToggleHtml);
+        }
+    }
+
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.querySelector('.theme-icon');
+    const themeText = document.querySelector('.theme-text');
+    
+    // Check saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Apply theme
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        enableDarkMode();
+    }
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', function() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        
+        if (isDark) {
+            enableLightMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+    
+    function enableDarkMode() {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (themeIcon) themeIcon.textContent = '☀️';
+        if (themeText) themeText.textContent = 'Light Mode';
+        localStorage.setItem('theme', 'dark');
+    }
+    
+    function enableLightMode() {
+        document.documentElement.removeAttribute('data-theme');
+        if (themeIcon) themeIcon.textContent = '🌙';
+        if (themeText) themeText.textContent = 'Dark Mode';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', initDarkMode);
