@@ -425,3 +425,26 @@ blockquote {
 .category-section.active {
   display: block;
 }
+
+/* ======= Back to Top Button ======= */
+#backToTop {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #002244; /* Darker blue */
+  transform: translateY(-3px);
+}
