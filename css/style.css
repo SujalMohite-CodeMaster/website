@@ -298,6 +298,64 @@ blockquote {
     color: var(--primary-blue);
 }
 
+/* ======= Testimonials Section ======= */
+.testimonials-section {
+    background: var(--bg-secondary);
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.testimonial-card::before {
+    content: "“";
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 80px;
+    color: var(--primary-blue);
+    opacity: 0.1;
+}
+
+.testimonial-text {
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.testimonial-author h6 {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial-card {
+    animation: fadeUp 0.6s ease forwards;
+}
+
+@media (max-width: 768px) {
+    .testimonials-section h2 {
+        font-size: 1.8rem;
+    }
+    .testimonial-card {
+        margin: 0 15px;
+    }
+}
+
 /* ======= Category Filter ======= */
 .category-filter {
     transition: all 0.3s ease;
