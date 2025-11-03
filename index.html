@@ -34,6 +34,31 @@
     #backToTop:hover {
       background-color: #0056b3;
     }
+
+    /* NAV: spacing and hover color */
+    .navbar-nav {
+      display: flex;
+      gap: 0.9rem; /* spacing between nav items */
+      align-items: center;
+    }
+    .navbar-nav .nav-link {
+      padding: 0.45rem 0.6rem;
+      color: rgba(255,255,255,0.95);
+      transition: color 0.15s ease, background 0.15s ease;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: #0d6efd !important; /* blue on hover */
+      background: transparent;
+    }
+    /* Keep "Get a Quote" separated */
+    .navbar .btn {
+      margin-left: 0.5rem;
+    }
+    @media (max-width: 767.98px) {
+      .navbar-nav { gap: 0.5rem; }
+      .navbar-nav .nav-link { padding: 0.45rem 0.4rem; font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
@@ -70,10 +95,36 @@
           <h1>Premium Industrial Bearings & Solutions</h1>
           <p class="lead">Reliable supplier of high-quality bearings since 2013. Trusted by industries worldwide.</p>
           <a href="products.html" class="btn btn-primary btn-lg me-2">Explore Products</a>
-          <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+          <a href="contact.html" class="btn btn-outline-dark btn-lg">Contact Us</a>
         </div>
         <div class="col-lg-6">
           <img src="images/industrial bearing.jpeg" alt="Industrial Bearings" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSERT: Key stats (12+, 500+, 10000+) -->
+  <section class="stats-section py-5">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded shadow-sm">
+            <h2 class="display-5 mb-1 text-primary">12+</h2>
+            <p class="mb-0 fw-semibold">Years of Excellence</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded shadow-sm">
+            <h2 class="display-5 mb-1 text-primary">500+</h2>
+            <p class="mb-0 fw-semibold">Happy Clients</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded shadow-sm">
+            <h2 class="display-5 mb-1 text-primary">10000+</h2>
+            <p class="mb-0 fw-semibold">Products Delivered</p>
+          </div>
         </div>
       </div>
     </div>
@@ -84,6 +135,7 @@
     <div class="container">
       <h2 class="text-center mb-5">Our Bearing Products</h2>
       <div class="row">
+        <!-- Ball Bearings -->
         <div class="col-md-3 mb-4">
           <div class="card h-100">
             <img src="images/Ball bearing.jpg" class="card-img-top" alt="Ball Bearings">
@@ -94,7 +146,43 @@
             </div>
           </div>
         </div>
-        <!-- Repeat for Roller, Thrust, and Custom Bearings -->
+
+        <!-- Roller Bearings (updated description) -->
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="images/Roller.png" class="card-img-top" alt="Roller Bearings">
+            <div class="card-body">
+              <h5 class="card-title">Roller Bearings</h5>
+              <p class="card-text">Cylindrical, tapered, and spherical roller bearings for heavy-load applications.</p>
+              <a href="products.html#roller-bearings" class="btn btn-sm btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thrust Bearings -->
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="images/thrust.png" class="card-img-top" alt="Thrust Bearings">
+            <div class="card-body">
+              <h5 class="card-title">Thrust Bearings</h5>
+              <p class="card-text">Axial load solutions including ball and roller thrust bearings.</p>
+              <a href="products.html#thrust-bearings" class="btn btn-sm btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialty Bearings (new) -->
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="images/Speciality logo .png" class="card-img-top" alt="Specialty Bearings" height="250">
+            <div class="card-body">
+              <h5 class="card-title">⚡ Specialty Bearings</h5>
+              <p class="card-text">Thrust, needle roller, and custom-engineered bearings for unique requirements.</p>
+              <a href="products.html#custom-solutions" class="btn btn-sm btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -144,29 +232,53 @@
   <!-- ===== END: Improved Loading Animation ===== -->
 
   <!-- ======= WhatsApp Floating Button ======= -->
-]
+
+
+<!-- ======= CTA Section ======= -->
+    <section class="cta-section bg-dark-blue text-white py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Optimize Your Bearing Solutions?</h2>
+            <p class="lead mb-4">Contact us for a free consultation today.</p>
+            <a href="contact.html" class="btn btn-light btn-lg me-3">Get in Touch</a>
+            <a href="tel:+919322279696" class="btn btn-outline-light btn-lg"><i class="fas fa-phone me-2"></i> Call Now</a>
+        </div>
+    </section>
 
   <!-- ======= Back to Top Button ======= -->
   <button id="backToTop" title="Go to top">↑</button>
 
   <!-- ======= Footer ======= -->
- <!-- ======= Footer ======= -->
 <footer class="bg-dark text-white py-4">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 mb-3">
+      <div class="col-md-3 mb-3">
         <h5>Sujal Services & Solutions</h5>
         <p>Your trusted partner for industrial bearings and machinery solutions.</p>
       </div>
-      <div class="col-md-4 mb-3">
-        <h5>Quick Links</h5>
+
+      <!-- NEW: Products column -->
+      <div class="col-md-3 mb-3">
+        <h5>Products</h5>
         <ul class="list-unstyled">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="products.html#ball-bearings" class="text-white">Ball Bearings</a></li>
+          <li><a href="products.html#roller-bearings" class="text-white">Roller Bearings</a></li>
+          <li><a href="products.html#thrust-bearings" class="text-white">Thrust Bearings</a></li>
+          <li><a href="products.html#needle-bearings" class="text-white">Needle Bearings</a></li>
+          <li><a href="products.html#custom-solutions" class="text-white">Custom Solutions</a></li>
         </ul>
       </div>
-      <div class="col-md-4 mb-3">
+
+      <div class="col-md-3 mb-3">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white">Home</a></li>
+          <li><a href="products.html" class="text-white">Products</a></li>
+          <li><a href="contact.html" class="text-white">Contact</a></li>
+          <li><a href="services.html" class="text-white">Services</a></li>
+          <li><a href="about.html" class="text-white">About</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-3">
         <h5>Contact Us</h5>
         <p><i class="fas fa-phone me-2"></i> +91 9322279696</p>
         <p><i class="fas fa-envelope me-2"></i> cp.sujal@hotmail.com</p>
@@ -189,6 +301,23 @@
       </div>
     </div>
     <hr>
+    <!-- Contact row: phone (start) - email (middle) - location (end) with small icons -->
+    <div class="d-flex justify-content-center flex-wrap align-items-center gap-4 mb-2">
+      <div class="d-flex align-items-center text-white">
+        <i class="fas fa-phone me-2" aria-hidden="true" style="font-size:0.95rem;"></i>
+        <span class="small">+91 9322279696</span>
+      </div>
+      <div class="d-flex align-items-center text-white">
+        <i class="fas fa-envelope me-2" aria-hidden="true" style="font-size:0.95rem;"></i>
+        <span class="small">cp.sujal@gmail.com</span>
+      </div>
+      <div class="d-flex align-items-center text-white">
+        <i class="fas fa-map-marker-alt me-2" aria-hidden="true" style="font-size:0.95rem;"></i>
+        <span class="small">Mumbai, Maharashtra, India</span>
+      </div>
+    </div>
+    
+    <hr>
     
     <!-- 🌐 Share Buttons -->
     <div class="text-center mb-3">
@@ -207,7 +336,7 @@
       </a>
     </div>
 
-    <p class="text-center mb-0">&copy; 2024 Sujal Services & Solutions. All Rights Reserved.</p>
+    <p class="text-center mb-0">&copy; 2025 Sujal Services & Solutions. All Rights Reserved.</p>
   </div>
 </footer>
 
